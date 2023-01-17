@@ -5,19 +5,19 @@ const request = require('request');
 request(process.argv[2], (err, response, body) => {
   if (!err) {
     const tasks = JSON.parse(body);
-    const completed_tasks = [];
+    const completedTasks = [];
     tasks.forEach(function (user) {
-      if (completed_tasks[user.userId] === undefined) {
-        completed_tasks[user.userId] = 0;
+      if (completedTasks[user.userId] === undefined) {
+        completedTasks[user.userId] = 0;
       }
       if (user.completed === true) {
-        completed_tasks[user.userId]++;
+        completedTasks[user.userId]++;
       }
    });
-    const result = {};
-    for (let i = 1; i < completed_tasks.length; ++i) {
-      if (complete_tasks[i] > 0) {
-        number[i] = completed_tasks[i];
+    const number = {};
+    for (let i = 1; i < completedTasks.length; ++i) {
+      if (completeTasks[i] > 0) {
+        number[i] = completedTasks[i];
       }
     }
     console.log(number);
