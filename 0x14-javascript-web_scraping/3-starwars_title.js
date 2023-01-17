@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require('request');
-const API_url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+const API_url = 'https://swapi-api.alx-tools.com/api/films/:id' + process.argv[2];
 
 request(API_url, (error, response, body) => {
   if (error) {
