@@ -14,8 +14,8 @@ request(process.argv[2], (err, response, body) => {
         completed_tasks[user.userId]++;
       }
    });
-    const number = {};
-   for (let i = 1; i < completed_tasks.length; ++i) {
+    const result = {};
+    for (let i = 1; i < completed_tasks.length; ++i) {
       if (complete_tasks[i] > 0) {
         number[i] = completed_tasks[i];
       }
