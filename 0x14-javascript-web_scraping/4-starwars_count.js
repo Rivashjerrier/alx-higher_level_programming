@@ -1,12 +1,10 @@
 #!/usr/bin/node
 
 const request = require('request');
-const api = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
+const api = process.argv[2];
 
 request(api, (err, response, body) => {
-  if (err) {
-    console.log(err);
- } else {
+  if (!error) {
     let number = 0;
     const data = JSON.parse(body);
     data.results.forEach(function (movies) {
