@@ -3,19 +3,19 @@
 const request = require('request');
 const url = process.argv[2];
 
-request(url, (error, response, body) => {
-  if (error) {
-    console.log(error);
+request(url, (err, response, body) => {
+  if (err) {
+    console.log(err);
  } else {
-    const data = JSON.parse(body).results;
-    let count = 0;
-    for (let index = 0; index < data.length; index++) {
-      for (let char = 0; char < results[index].characters.length; char++) {
-        if (data[index].characters[char].includes('18')) {
+    let number = 0;
+    const data = JSON.parse(body);
+    data.results.forEach(function (movies) {
+      movies.characters.forEach(function (character) {
+        if (character.search('/18/') !== -1) {
           count++;
         }
-      }
-    }
+      });
+    });
     console.log(count);
   }
 });
