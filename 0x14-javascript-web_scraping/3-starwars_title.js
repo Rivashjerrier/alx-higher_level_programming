@@ -7,7 +7,7 @@ request(API_url, (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
-    const info = JSON.parse(body);
+    const data = JSON.parse(body);
     console.log(data.title);
   }
 });
