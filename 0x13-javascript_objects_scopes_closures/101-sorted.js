@@ -10,4 +10,4 @@ for (const key in dict) {
   }
 }
 
-console.log(new_dict);
+console.log(newDict);
