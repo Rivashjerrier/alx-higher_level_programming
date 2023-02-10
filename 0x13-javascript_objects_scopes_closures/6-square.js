@@ -6,7 +6,7 @@ class Square#1 extends Square#0 {
     if (c === undefined) {
       this.print();
     } else {
-      for (let i = 0; i < this.width; i++) {
+      for (let i = 0; i < this.height; i++) {
         console.log(c.repeat(this.width));
       }
     }
