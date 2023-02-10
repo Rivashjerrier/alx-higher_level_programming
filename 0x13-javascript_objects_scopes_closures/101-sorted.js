@@ -1,9 +1,13 @@
 #!/usr/bin/node
-const dict = require('./101-data.js');
+const dict = require('./101-data.js').dict;
+const new_dict = {};
 
-console.log(Object.entries(dict).reduce((Dict, key) => {
-  !Dict[key[1]]
-    ? Dict[key[1]] = [key[0]]
-    : Dict[key[1]].push(key[0]);
-  return Dict;
-}, {}));
+for (const key in dict) {
+  if (dict[key] in new_dict) {
+    new_dict[dict[key]].push(key);
+  } else {
+    new_dict[dict[key]] = [key];
+  }
+}
+
+console.log(new_dict);
