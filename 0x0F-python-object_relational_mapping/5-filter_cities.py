@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" takes the name of a state as an argument, lists all cities of that state """
+""" Displays all cities of a given state """
 
 import MySQLdb
 from sys import argv
