@@ -12,7 +12,8 @@ if __name__ == "__main__":
                            (sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
-    session = Session(engine)
-    for item in session.query(State).order_by(State.id):
-        print("{}: {}".format(item.id, item.name))
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    for state in session.query(State).order_by(State.id):
+        print("{}: {}".format(state.id, state.name))
     session.close()
