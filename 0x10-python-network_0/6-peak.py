@@ -3,13 +3,18 @@
 This module defines a function to find a peak in a list of unsorted integers
 """
 
-
 def find_peak(list_of_integers):
     """
     Finds a peak in a list of unsorted integers
 
+    Args:
+        list_of_integers (list): a list of unsorted integers
+
     Returns:
         int: the peak integer in the list
+
+    Raises:
+        ValueError: if the list is empty or None
     """
     if not list_of_integers:
         raise ValueError("List cannot be empty or None")
@@ -25,3 +30,4 @@ def find_peak(list_of_integers):
         return find_peak(list_of_integers[mid + 1:])
     else:
         return list_of_integers[mid]
+
